@@ -1,9 +1,12 @@
 import { AppButtonProps } from "./AppButtonProps"
+import { PrimaryButton } from "./style"
 
 export default function AppButton({label , onClick}: AppButtonProps) {
     return(
-        <button onClick={onClick}>
-            {label}
-        </button>
+        <PrimaryButton onClick={onClick}>
+            <p>
+                {label}
+            </p>
+        </PrimaryButton>
     )
 }
