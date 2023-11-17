@@ -2,7 +2,7 @@ import AppButton from "../../components/Button/AppButton";
 import { Container, Profile, BtnContainer, Icon, IconContainer } from "./style";
 import links from "../../data/links.json"
 import data from "../../data/data.json"
-import { GitHub, Linkedin, Mail } from 'react-feather';
+import { GitHub, Linkedin, Mail, Youtube } from 'react-feather';
 
 
 export default function Home() {
@@ -16,8 +16,8 @@ export default function Home() {
     )
 
     const onLinkClick = (link: string) => {
-        window.location.href = link;
-        // window.open(link, "_blank");
+        // window.location.href = link;
+        window.open(link, "_blank");
         // console.log("Clicked")
     }
 
@@ -34,11 +34,16 @@ export default function Home() {
                 <Icon onClick={() => onLinkClick(data.linkedIn)}>
                     <Linkedin color='#F4AC3E' stroke-width="1.2" size={32} />
                 </Icon>
-                <Icon onClick={() => onLinkClick(data.GitHub)}>
+                <Icon onClick={() => onLinkClick(data.gitHub)}>
                     <GitHub color='#F4AC3E' stroke-width="1.2" size={32} />
                 </Icon>
                 <Icon>
-                    <Mail color='#F4AC3E' stroke-width="1.2" size={32} />
+                    <a href={`mailto: ${data.email}`}>
+                        <Mail color='#F4AC3E' stroke-width="1.2" size={32} />
+                    </a>
+                </Icon>
+                <Icon onClick={() => onLinkClick(data.youtube)}>
+                    <Youtube color='#F4AC3E' stroke-width="1.2" size={32} />
                 </Icon>
             </IconContainer>
         </Container>
