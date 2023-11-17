@@ -18,7 +18,6 @@ export default function Home() {
     const onLinkClick = (link: string) => {
         // window.location.href = link;
         window.open(link, "_blank");
-        // console.log("Clicked")
     }
 
     return (
